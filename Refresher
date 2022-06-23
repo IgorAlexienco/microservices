@@ -1,0 +1,72 @@
+C:\DEV_JAVA\spring5webapp>rd .git /S/Q
+git init
+git add .
+C:\DEV_JAVA\spring5webapp>git commit -m "My First Commit"
+C:\DEV_JAVA\spring5webapp>git remote add origin https://github.com/IgorAlexienco/spring5web.git
+C:\DEV_JAVA\spring5webapp>git push -u origin master
+
+git push -u origin localBranch:remoteBranch     --   to push to a remote branch
+
+-------------------------------------------------------
+docket build  --  create image from a docker file
+C:\DEV\location>docker build -t awsapp-2 .
+C:\DEV_JAVA\aws-app>docker run -p80:80 awsapp
+C:\DEV_JAVA\aws-app>docker run -d -p80:80 awsapp
+
+==============  mysql db running in container ================
+docker volume create mysql-volume
+docker run -d --name=mysql-cntr -p3306:3306 -v mysql-volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=passw0rd mysql:5.7
+
+C:\Users\igorg>docker run -d --name=mysql-cntr -p3306:3306 -e MYSQL_ROOT_PASSWORD=password mysql:5.7
+278c7181707d47af2f087df1096ea2baea3c2ab3fd6381465d13f6fdd6f5a8a0
+
+C:\Users\igorg>docker logs mysql-cntr
+docker exec -it mysql-cntr bash
+
+bash-4.2# mysql -u root -p
+Enter password:
+mysql> show databases;
+mysql> create database sb_db;
+mysql> use sb_db;
+mysql> create table user (id int, name varchar(30));
+mysql> insert into table user(id, name) values ('1','Igor');
+mysql> show databases;
+
+docker run --name=mk-mysql -p3306:3306 -v mysql-volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql/mysql-server:8.0.20
+Unable to find image ‘mysql/mysql-server:8.0.20’ locally
+8.0.20: Pulling from mysql/mysql-server
+
+----  kubectl related ----
+PS C:\DEV_JAVA> cd spring5webapp
+PS C:\DEV_JAVA\spring5webapp> kubectl create deployment sb-app --image=sb-app --dry-run=client -o=yaml > sb-app-deployment.yml
+PS C:\DEV_JAVA\spring5webapp> kubectl apply -f sb-app-deployment.yml
+deployment.apps/sb-app created
+PS C:\DEV_JAVA\spring5webapp> kubectl create service nodeport sb-app --tcp=8080:8080 --dry-run=client -o=yaml > sb-app-service.yml
+PS C:\DEV_JAVA\spring5webapp> kubectl apply -f sb-app-service.yml
+service/sb-app created
+PS C:\DEV_JAVA\spring5webapp> kubectl apply -f sb-app-service.yml
+service/sb-app created
+PS C:\DEV_JAVA\spring5webapp> kubectl get all
+NAME                          READY   STATUS             RESTARTS   AGE
+pod/sb-app-767fc5b465-cd47q   0/1     ImagePullBackOff   0          7m19s
+
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/sb-app       NodePort    10.100.19.136   <none>        8080:32739/TCP   52s
+
+docker tag 3f0eb7a3d199 igr025/dev-repo:sb-webapp-fargate
+C:\DEV_JAVA\spring5webapp>docker push igr025/dev-repo:sb-webapp-fargate
+C:\DEV_JAVA\spring5webapp>docker pull igr025/dev-repo:ui-db-img
+
+---   adding image to repository  ----
+docker tag 3f0eb7a3d199 igr025/dev-repo:sb-webapp-fargate
+C:\DEV_JAVA\spring5webapp>docker push igr025/dev-repo:sb-webapp-fargate
+C:\DEV_JAVA\spring5webapp>docker pull igr025/dev-repo:ui-db-img
+
+---  deleting service using yml ---
+kubectl delete -f service.yml
+service "location-service" deleted
+kubectl delete -f deployment.yml
+
+
+
+
