@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Spring Boot Micro Services</title>
+    <th:block th:include="fragments/dependencies :: head"></th:block>
+</head>
+<body>
+<div class="container">
+    <th:block th:include="fragments/header :: header"></th:block>
+    <div th:if="${not #lists.isEmpty(products)}">
+
+        <h2>Products</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>version</th>
+                <th>name</th>
+                <th>type</th>
+                <th>upc</th>
+                <th>quantity</th>
+                <th>price</th>
+                <th>created</th>
+                <th>last modified</th>
+            </tr>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}">123</td>
+                <td th:text="${product.version}">version</td>
+                <th th:text="${product.productName}">Apple</th>
+                <th th:text="${product.productType}">Type</th>
+                <th th:text="${product.upc}">upc</th>
+                <th th:text="${product.quantityOnHand}">quantity</th>
+                <th th:text="${product.price}">price</th>
+                <th th:text="${product.createdDate}">created</th>
+                <th th:text="${product.lastModifiedDate}">last modified</th>
+            </tr>
+
+        </table>
+
+        <!--    </div>   -->
+    </div>
+
+</body>
+</html>
+

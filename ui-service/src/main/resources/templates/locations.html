@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Spring Boot Micro Services</title>
+    <th:block th:include="fragments/dependencies :: head"></th:block>
+</head>
+<body>
+<div class="container">
+    <th:block th:include="fragments/header :: header"></th:block>
+       <div th:if="${not #lists.isEmpty(ratedLocations)}">
+
+        <h2>Rated Locations</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Visited</th>
+                <th>Rated</th>
+                <th>By</th>
+                <th>Producer1</th>
+                <th>Producer2</th>
+            </tr>
+            <tr th:each="location : ${ratedLocations}">
+                <td th:text="${location.name}">name</td>
+                <td th:text="${location.desc}">description</td>
+                <td th:text="${location.rating}">rating</td>
+                <td th:text="${location.userId}">by</td>
+                <td th:text="${location.producerFst}">consumed1</td>
+                <td th:text="${location.producerSnd}">consumed2</td>
+            </tr>
+        </table>
+
+<!--    </div>   -->
+</div>
+
+</body>
+</html>

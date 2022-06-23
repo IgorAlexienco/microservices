@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+    <script src="../../static/js/jquery.min.js" th:src="@{js/jquery.min.js}"></script>
+    <link href="../../static/css/ui.css" th:href="@{css/ui.css}" rel="stylesheet" media="screen"/>
+
+</head>
+<body>
+
+<div class="container">
+    <div th:fragment="header">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" th:href="@{/index}">Index</a></li>
+                        <li><a href="#" th:href="@{/products}">Products</a></li>
+                        <li><a href="#" th:href="@{/index}">Holiday</a></li>
+                        <li><a href="#" th:href="@{/index}">Day work</a></li>
+                        <li><a href="#" th:href="@{/index}">Reports</a></li>
+                        <li><a href="#" th:href="@{/index}">Reports</a></li>
+                        <li><a href="#" th:href="@{/api/v1/product}">Product</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+            <div class="jumbotron">
+                <div class="row text-center">
+                    <div class="">
+                        <h3>Spring Boot UI Micro Service - Web App</h3>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <img src="../../static/images/OrganicPatterns2020.png" width="100%"
+                         th:src="@{/images/OrganicPatterns2020.png}"/>
+                </div>
+            </div>
+    </div>
+</div>
+</body>
+</html>
