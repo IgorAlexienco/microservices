@@ -67,6 +67,12 @@ kubectl delete -f service.yml
 service "location-service" deleted
 kubectl delete -f deployment.yml
 
+C:\DEV_JAVA\microservices>docker ps
+CONTAINER ID   IMAGE               COMMAND              CREATED              STATUS              PORTS                    NAMES
+675aed1dfbce   ui-service:latest   "java -jar ui.jar"   About a minute ago   Up About a minute   0.0.0.0:8080->8080/tcp   frosty_hodgkin
+
+C:\DEV_JAVA\microservices>docker logs 675aed1dfbce
+
 
 
 

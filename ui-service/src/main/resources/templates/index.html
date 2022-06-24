@@ -11,11 +11,22 @@
 <body>
 <div class="container">
     <div class="jumbotron">
-        <h1>UI micro-service</h1>
+
+        <span th:text="#{change.language}"></span>
+        <select id="locales">
+            <option value=""></option>
+            <option value="en" th:text="#{lang.en}"></option>
+            <option value="fr" th:text="#{lang.fr}"></option>
+            <option value="de" th:text="#{lang.de}"></option>
+            <option value="ru" th:text="#{lang.ru}"></option>
+        </select>
+
+        <h1 th:text="#{index.header.text}">UI micro-service</h1>
         <img src="../static/images/Light2020.png" width="358" lenght="719"
              th:src="@{images/Light2020.png}"/>
-        <h1>Greetings</h1>
-        <h2>July year 2020</h2>
+        <h1 th:text="#{index.greetings.text}">Greetings</h1>
+        <h2 th:text="#{index.date.text}">July year 2022</h2>
     </div>
 </div>
+
 </body>

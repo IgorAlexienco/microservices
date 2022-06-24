@@ -8,3 +8,47 @@
 <h1>Products List</h1>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>UI microservice</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+    <script src="../static/js/jquery.min.js" th:src="@{js/jquery.min.js}"></script>
+    <link href="../static/css/ui.css" th:href="@{css/ui.css}" rel="stylesheet" media="screen"/>
+</head>
+
+<body>
+<div class="container">
+    <div class="jumbotron">
+
+        <span th:text="#{change.language}"></span>
+        <select id="locales">
+            <option value=""></option>
+            <option value="en" th:text="#{lang.en}"></option>
+            <option value="fr" th:text="#{lang.fr}"></option>
+            <option value="de" th:text="#{lang.de}"></option>
+            <option value="ru" th:text="#{lang.ru}"></option>
+        </select>
+
+        <h1 th:text="#{index.header.text}">UI micro-service</h1>
+        <img src="../static/images/Light2020.png" width="358" lenght="719"
+             th:src="@{images/Light2020.png}"/>
+        <h1 th:text="#{index.greetings.text}">Greetings</h1>
+        <h2 th:text="#{index.date.text}">July year 2022</h2>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    $("#locales").change(function() {
+        var selectedOption=$('#locales').val();
+        if( selectedOption != '') {
+           windows.location.replace('?lang='+ selectedOption);
+        }
+    });
+    });
+</script>
+
+</body>
