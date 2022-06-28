@@ -23,6 +23,6 @@ public class ProductUiController {
         System.out.println("calling localhost:8080/products");
         System.out.println(""+ productCrudRepository.findAll());
         model.addAttribute("products", productCrudRepository.findAll());
-        return "product_list";
+        return "productDtoList";
     }
 }

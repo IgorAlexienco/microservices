@@ -1,5 +1,5 @@
-//package com.micto.ui;
-//
+package com.micto.ui;
+
 //import org.junit.jupiter.api.Test;
 //import org.springframework.boot.test.context.SpringBootTest;
 //
