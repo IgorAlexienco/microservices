@@ -81,7 +81,7 @@ public class TestProductCrudRepository {
       List<ProductDto> ptoductDtoLst=  productCrudService.findAll();
       when(productCrudService.findAll()).thenReturn(Arrays.asList(ProductDto.builder().build()));
       assertThat(ptoductDtoLst.size() == 1);
-      log.info("find all test is compleat");
+      log.info("find all test is compleated");
     }
 
 
